@@ -539,12 +539,7 @@ Target "PublishStaticPages" (fun _ ->
 )
 
 Target "GitHubRelease" (fun _ ->
-<<<<<<< cd844b838fa733d33d634702ac8895fa8b849836
     let release = release.Value
-=======
-    let release =
-        releaseCompiler.Value
->>>>>>> Bump version to 1.0.0-narumi-915
     let user =
         match getBuildParam "github-user" with
         | s when not (String.IsNullOrWhiteSpace s) -> s
