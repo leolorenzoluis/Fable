@@ -243,7 +243,7 @@ module Fake =
 let project = "Fable"
 let authors = ["Alfonso García-Caro"]
 
-let gitOwner = "fable-compiler"
+let gitOwner = "leolorenzoluis"
 let gitHome = "https://github.com/" + gitOwner
 
 let releaseCore = Util.loadReleaseNotes "CORE"
