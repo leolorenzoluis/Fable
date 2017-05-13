@@ -512,8 +512,8 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
-    Branches.tag "" release.NugetVersion
-    Branches.pushTag "" remote release.NugetVersion
+    Branches.tag "" "1.0.0-blah"
+    Branches.pushTag "" remote "1.0.0-blah"
 
     // release on github
     createClient user pw
