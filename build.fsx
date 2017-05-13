@@ -493,7 +493,7 @@ Target "PublishStaticPages" (fun _ ->
 
 Target "GitHubRelease" (fun _ ->
     let release =
-        releaseCompiler.Value
+        releaseTools.Value
     let user =
         match getBuildParam "github-user" with
         | s when not (String.IsNullOrWhiteSpace s) -> s
