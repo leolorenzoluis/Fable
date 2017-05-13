@@ -266,6 +266,11 @@ let compilerSrcDir = "src/dotnet/Fable.Compiler"
 let toolsSrcDir = "src/dotnet/Fable.Tools"
 let coreJsSrcDir = "src/typescript/fable-core"
 
+let releaseNotesData = 
+    File.ReadAllLines "RELEASE_NOTES_COMPILER.md"
+    |> parseAllReleaseNotes
+let release = List.head releaseNotesData
+
 // Targets
 let installDotnetSdk () =
     let dotnetSDKPath = FullName "./dotnetsdk"
@@ -492,8 +497,8 @@ Target "PublishStaticPages" (fun _ ->
 )
 
 Target "GitHubRelease" (fun _ ->
-    let release =
-        releaseCompiler.Value
+    // let release =
+    //     releaseCompiler.Value
     let user =
         match getBuildParam "github-user" with
         | s when not (String.IsNullOrWhiteSpace s) -> s
