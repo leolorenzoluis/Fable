@@ -599,6 +599,8 @@ Target "PublishPackages" (fun () ->
     pushNpm (Some buildSplitter) releaseSplitter.Value "src/typescript/fable-splitter"
 )
 
+//Test
+
 Target "All" (fun () ->
     installDotnetSdk ()
     clean ()
