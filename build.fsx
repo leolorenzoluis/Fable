@@ -549,6 +549,8 @@ Target "PublishPackages" (fun () ->
     // TODO: Add NUnit plugin, it must be built first
 )
 
+//Test
+
 Target "All" (fun () ->
     installDotnetSdk ()
     clean ()
