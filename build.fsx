@@ -513,8 +513,8 @@ Target "GitHubRelease" (fun _ ->
     Branches.pushBranch "" remote (Information.getBranchName "")
 
     let test = "0.0.1-fable-test.3"
-    Branches.tag "" test
-    Branches.pushTag "" remote test
+    Branches.tag "" release.NugetVersion
+    Branches.pushTag "" remote release.NugetVersion
 
     // release on github
     createClientWithToken user
