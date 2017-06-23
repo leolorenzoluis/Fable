@@ -512,7 +512,7 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
-    let test = "1.2.3-json-converter"
+    let test = "0.0.1-fable-test"
     Branches.tag "" test
     Branches.pushTag "" remote test
 
