@@ -558,6 +558,7 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
+<<<<<<< 50f638952bf8a6e60f79c199bfcc7d9c28fafcd2
 <<<<<<< 12bd947105744465ca1555063c3ef27d805af2fc
 <<<<<<< 01fb8409d0a4d6def7563d420024e6fa966d76ad
     Branches.tag "" "test-1.2.3"
@@ -566,6 +567,9 @@ Target "GitHubRelease" (fun _ ->
 >>>>>>> Bump version to 1.0.0-narumi-916
 =======
     Branches.tag "" "1.2.0.2"
+>>>>>>> Bump version to 1.0.0-narumi-916
+=======
+    Branches.tag "" "1.2.3.3"
 >>>>>>> Bump version to 1.0.0-narumi-916
     Branches.pushTag "" remote release.NugetVersion
 
