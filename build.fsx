@@ -512,7 +512,7 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
-    Branches.tag "" "2.1.3"
+    Branches.tag "" "2.1.3.4"
     Branches.pushTag "" remote release.NugetVersion
 
     // release on github
