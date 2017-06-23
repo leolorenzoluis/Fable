@@ -512,11 +512,11 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
-    Branches.tag "" "1.2.3.3"
+    Branches.tag "" "2.1.3"
     Branches.pushTag "" remote release.NugetVersion
 
     // release on github
-    createClient user pw
+    createClientWithToken user
     |> createDraft gitOwner project release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     // |> uploadFile (buildDir</>("FSharp.Compiler.Service." + release.NugetVersion + ".nupkg"))
     |> releaseDraft
