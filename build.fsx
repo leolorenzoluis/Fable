@@ -558,6 +558,7 @@ Target "GitHubRelease" (fun _ ->
     Git.Commit.Commit "" (sprintf "Bump version to %s" release.NugetVersion)
     Branches.pushBranch "" remote (Information.getBranchName "")
 
+<<<<<<< 3d8f751b82b2d5c6c434b986ac4e47e6a5bda8cd
 <<<<<<< 50f638952bf8a6e60f79c199bfcc7d9c28fafcd2
 <<<<<<< 12bd947105744465ca1555063c3ef27d805af2fc
 <<<<<<< 01fb8409d0a4d6def7563d420024e6fa966d76ad
@@ -571,10 +572,13 @@ Target "GitHubRelease" (fun _ ->
 =======
     Branches.tag "" "1.2.3.3"
 >>>>>>> Bump version to 1.0.0-narumi-916
+=======
+    Branches.tag "" "2.1.3"
+>>>>>>> Bump version to 1.0.0-narumi-916
     Branches.pushTag "" remote release.NugetVersion
 
     // release on github
-    createClient user pw
+    createClientWithToken user
     |> createDraft gitOwner project release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     // |> uploadFile (buildDir</>("FSharp.Compiler.Service." + release.NugetVersion + ".nupkg"))
     |> releaseDraft
