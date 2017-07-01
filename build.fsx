@@ -562,7 +562,7 @@ Target "GitHubRelease" (fun _ ->
     Branches.pushTag "" remote release.NugetVersion
 
     // release on github
-    createClient user pw
+    createClientWithToken user
     |> createDraft gitOwner project release.NugetVersion (release.SemVer.PreRelease <> None) release.Notes
     // |> uploadFile (buildDir</>("FSharp.Compiler.Service." + release.NugetVersion + ".nupkg"))
     |> releaseDraft
